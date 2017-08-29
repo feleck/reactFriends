@@ -27,5 +27,6 @@ module ReactFriends
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+    config.react.addons = true
   end
 end

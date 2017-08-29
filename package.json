@@ -2,6 +2,7 @@
   "name": "reactFriends",
   "private": true,
   "dependencies": {
+    "immutability-helper": "^2.3.1",
     "jquery": "^3.2.1",
     "jquery-ujs": "^1.2.2"
   }

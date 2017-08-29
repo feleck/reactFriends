@@ -1,0 +1,7 @@
+%h1 Contacts
+
+- @contacts.each do |contact|
+  %h3
+    = "#{contact.first_name} #{contact.last_name}"
+    = contact.email
+    = contact.phone
