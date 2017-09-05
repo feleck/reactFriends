@@ -33,15 +33,26 @@ var Contacts = React.createClass({
 
   render: function() {
     return (
-      <div>
-        <ContactsList contacts={this.state.contacts} />
-        <ContactForm
-          input_first_name={this.state.first_name}
-          input_last_name={this.state.last_name}
-          input_email={this.state.email}
-          input_phone={this.state.phone}
-          onUserInput={this.handleUserInput}
-          onFormSubmit={this.handleFormSubmit}/>
+      <div className='container'>
+        <div className="jumbotron">
+          <h1>ReactJS Friends List</h1>
+          <p><em>S</em>ingle <em>P</em>age <em>A</em>pp written using Ruby on Rails and React.JS duo.</p>
+          <p>by Marcin</p>
+        </div>
+        <div className="row">
+          <div className='col-7 ml-auto'>
+            <ContactsList contacts={this.state.contacts} />
+          </div>
+          <div className='col-4'>
+            <ContactForm
+              input_first_name={this.state.first_name}
+              input_last_name={this.state.last_name}
+              input_email={this.state.email}
+              input_phone={this.state.phone}
+              onUserInput={this.handleUserInput}
+              onFormSubmit={this.handleFormSubmit}/>
+          </div>
+        </div>
       </div>
     )
   }
