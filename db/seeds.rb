@@ -5,3 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+1.upto(9) do |i|
+  Contact.create(first_name: "Mike #{i}",
+                last_name: "Smith #{i+100}",
+                email: "MikeSmith_#{i}@email.com",
+                phone: "+48 123 32 #{i}")
+end
