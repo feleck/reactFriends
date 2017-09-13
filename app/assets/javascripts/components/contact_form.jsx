@@ -32,7 +32,7 @@ var ContactForm = React.createClass({
             <input name='phone' placeholder='Phone'
               value={this.props.input_phone} onChange={this.handleChange}/>
           </div>
-          <input type='submit' value='Add Contact' className='btn btn-default' />
+          <input type='submit' value='Add Contact' className='btn btn-default btn-sm' />
         </form>
       </div>
     )
