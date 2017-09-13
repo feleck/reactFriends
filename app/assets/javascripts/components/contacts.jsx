@@ -27,8 +27,28 @@ var Contacts = React.createClass({
   addNewContact: function(contact) {
     var contacts = React.addons.update(this.state.contacts, { $push: [contact] });
     this.setState({
-      contacts: contacts.sort()
+      contacts: contacts
     });
+  },
+
+  handleDelete: function(id) {
+    $.ajax({
+      url: '/contacts/' + id,
+      method: 'DELETE',
+      success: function() {
+        this.deleteContact(id);
+      }.bind(this),
+      error: function(xhr, status, error) {
+        alert('Cannot delete requested contact: ', error);
+      }
+    })
+  },
+
+  deleteContact: function(id) {
+    var newContacts = this.state.contacts.filter((contact) => {
+        return contact.id != id;
+    });
+    this.setState({ contacts: newContacts });
   },
 
   render: function() {
@@ -41,7 +61,9 @@ var Contacts = React.createClass({
         </div>
         <div className="row">
           <div className='col-7 ml-auto'>
-            <ContactsList contacts={this.state.contacts} />
+            <ContactsList
+              contacts={this.state.contacts}
+              handleDelete={this.handleDelete}/>
           </div>
           <div className='col-4'>
             <ContactForm
